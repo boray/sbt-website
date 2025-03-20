@@ -68,8 +68,9 @@ body {
 
 .logo-icon {
     margin-right: 10px;
-    font-size: 32px;
-    color: var(--accent-color);
+    height: 48px;
+    width: auto;
+    vertical-align: middle;
 }
 
 .nav-links {
