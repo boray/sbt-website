@@ -211,7 +211,7 @@ window.addEventListener('load', animateOnScroll);
 window.addEventListener('scroll', animateOnScroll);
 
 // Countdown to event
-const eventDate = new Date('2025-06-15T09:00:00');
+const eventDate = new Date('2025-11-22T09:00:00');
 
 function updateCountdown() {
     const countdownElement = document.querySelector('.countdown');

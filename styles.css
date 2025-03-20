@@ -22,7 +22,7 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(5, 25, 55, 0.7), rgba(5, 25, 55, 0.7)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(rgba(5, 25, 55, 0.7), rgba(5, 25, 55, 0.7)), url('Albert-Long-Hall.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +52,7 @@ body {
     z-index: 100;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -62,7 +62,8 @@ body {
     font-weight: bold;
     text-decoration: none;
     display: flex;
-    align-items: center;
+    align-items: normal;
+    margin-right: auto;
 }
 
 .logo-icon {
@@ -74,6 +75,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
+    margin-left: auto;
 }
 
 .nav-links li {
@@ -260,6 +262,34 @@ body {
     text-align: center;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.biomedical-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.biomedical-logo {
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.biomedical-text p {
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 8px;
 }
 
 .announcements-content {
@@ -608,4 +638,16 @@ footer {
     .countdown-label {
         font-size: 12px;
     }
+}
+
+.navbar-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-logo {
+    height: 40px;
+    width: auto;
 }
