@@ -551,21 +551,7 @@ footer {
 
 @media screen and (max-width: 768px) {
     .navbar {
-        padding: 10px 15px;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .navbar .logo {
-        font-size: 18px;
-    }
-
-    .logo-icon {
-        height: 36px;
-    }
-
-    .navbar-logos {
-        display: none;  /* Hide logos in mobile view */
+        padding: 15px;
     }
     
     .nav-links {
@@ -578,9 +564,8 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: right 0.5s ease-in-out;
+        transition: right 0.5s;
         z-index: 99;
-        padding: 80px 20px;
     }
     
     .nav-links.active {
@@ -589,27 +574,11 @@ footer {
     
     .nav-links li {
         margin: 20px 0;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .nav-links a {
-        display: block;
-        padding: 10px;
-        font-size: 18px;
     }
     
     .mobile-menu-btn {
         display: block;
         z-index: 100;
-        position: relative;
-        font-size: 24px;
-        padding: 5px;
-        margin-left: 10px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        color: white;
     }
     
     .hero-content h1 {

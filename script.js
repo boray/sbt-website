@@ -5,7 +5,6 @@ const navLinks = document.querySelector('.nav-links');
 mobileMenuBtn.addEventListener('click', function() {
     navLinks.classList.toggle('active');
     mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
 });
 
 // Close mobile menu when clicking a link
@@ -15,20 +14,8 @@ navLinksItems.forEach(link => {
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             mobileMenuBtn.textContent = '☰';
-            document.body.style.overflow = '';
         }
     });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
-    if (navLinks.classList.contains('active') && 
-        !navLinks.contains(e.target) && 
-        !mobileMenuBtn.contains(e.target)) {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.textContent = '☰';
-        document.body.style.overflow = '';
-    }
 });
 
 // Smooth scrolling for anchor links
