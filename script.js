@@ -187,16 +187,22 @@ window.addEventListener('scroll', animateOnScroll);
 
 // Countdown to event
 const eventDate = new Date('2025-11-22T09:00:00');
+const abstractDeadline = new Date('2025-05-15T23:59:59');
 
 function updateCountdown() {
-    const countdownElement = document.querySelector('.countdown');
+    updateSpecificCountdown('.countdown', eventDate, 'Etkinlik başladı!');
+    updateSpecificCountdown('.abstract-countdown', abstractDeadline, 'Başvuru süresi doldu!');
+}
+
+function updateSpecificCountdown(selector, targetDate, expiredMessage) {
+    const countdownElement = document.querySelector(selector);
     if (!countdownElement) return;
     
     const now = new Date();
-    const diff = eventDate.getTime() - now.getTime();
+    const diff = targetDate.getTime() - now.getTime();
     
     if (diff <= 0) {
-        countdownElement.innerHTML = '<div class="countdown-item">Etkinlik başladı!</div>';
+        countdownElement.innerHTML = `<div class="countdown-item">${expiredMessage}</div>`;
         return;
     }
     
@@ -227,8 +233,8 @@ function updateCountdown() {
 
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if countdown element exists and update it
-    if (document.querySelector('.countdown')) {
+    // Check if countdown elements exist and update them
+    if (document.querySelector('.countdown') || document.querySelector('.abstract-countdown')) {
         updateCountdown();
         setInterval(updateCountdown, 1000);
     }
