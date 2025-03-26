@@ -551,8 +551,21 @@ footer {
 
 @media screen and (max-width: 768px) {
     .navbar {
-        padding: 15px;
+        padding: 10px 15px;
         justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar .logo {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        height: 36px;
+    }
+
+    .navbar-logos {
+        display: none;  /* Hide logos in mobile view */
     }
     
     .nav-links {
@@ -590,6 +603,13 @@ footer {
         display: block;
         z-index: 100;
         position: relative;
+        font-size: 24px;
+        padding: 5px;
+        margin-left: 10px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: white;
     }
     
     .hero-content h1 {
