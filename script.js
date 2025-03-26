@@ -40,31 +40,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            alert('Lütfen tüm alanları doldurunuz.');
-            return;
-        }
-        
-        // Here you would typically send the form data to your server
-        // For now, we'll just simulate a successful submission
-        alert('Mesajınız gönderildi. Teşekkür ederiz!');
-        contactForm.reset();
-    });
-}
-
 // Navbar background change on scroll
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
