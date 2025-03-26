@@ -135,55 +135,37 @@ function showImageModal(src, alt) {
     });
 }
 
-// Add animation on scroll
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
+// Remove old animation functions and scroll listener
+function setupAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                entry.target.style.animation = 'fadeInUp 0.3s ease-out forwards';
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
 
-function animateOnScroll() {
-    const animateElements = document.querySelectorAll('.section-header, .about-content, .busas-content, .announcement-card, .gallery-item');
-    
-    animateElements.forEach(element => {
-        if (isElementInViewport(element) && !element.classList.contains('animated')) {
-            element.classList.add('animated');
-            element.style.animation = 'fadeInUp 0.6s ease-out forwards';
-        }
+    document.querySelectorAll('.section-header, .about-content, .busas-content, .announcement-card, .gallery-item').forEach(element => {
+        observer.observe(element);
     });
 }
 
-// Add animation styles
-const animationStyle = document.createElement('style');
-animationStyle.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+// Initialize page when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if countdown elements exist and update them
+    if (document.querySelector('.countdown') || document.querySelector('.abstract-countdown')) {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     }
     
-    .section-header, .about-content, .busas-content, .announcement-card, .gallery-item {
-        opacity: 0;
-    }
-    
-    .animated {
-        opacity: 1;
-    }
-`;
-document.head.appendChild(animationStyle);
-
-// Run animation check on load and scroll
-window.addEventListener('load', animateOnScroll);
-window.addEventListener('scroll', animateOnScroll);
+    // Initialize animations
+    setupAnimations();
+});
 
 // Countdown to event
 const eventDate = new Date('2025-11-22T09:00:00');
@@ -230,15 +212,3 @@ function updateSpecificCountdown(selector, targetDate, expiredMessage) {
         </div>
     `;
 }
-
-// Initialize page when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if countdown elements exist and update them
-    if (document.querySelector('.countdown') || document.querySelector('.abstract-countdown')) {
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    }
-    
-    // Initialize other functions that should run on load
-    animateOnScroll();
-});
