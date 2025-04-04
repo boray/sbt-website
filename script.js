@@ -150,7 +150,7 @@ function setupAnimations() {
         rootMargin: '50px'
     });
 
-    document.querySelectorAll('.section-header, .about-content, .busas-content, .announcement-card, .gallery-item').forEach(element => {
+    document.querySelectorAll('.section-header, .about-content, .busas-content, .important-dates-content, .call-for-papers-content, .committees-content, .announcement-card, .gallery-item').forEach(element => {
         observer.observe(element);
     });
 }

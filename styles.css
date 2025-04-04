@@ -184,7 +184,7 @@ body {
     text-transform: uppercase;
 }
 
-.about-section, .busas-section, .announcements-section, .gallery-section, .contact-section, .biomedical-section {
+.about-section, .busas-section, .announcements-section, .gallery-section, .contact-section, .biomedical-section, .important-dates-section, .call-for-papers-section, .committees-section {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -535,7 +535,7 @@ footer {
     }
 }
 
-.section-header, .about-content, .busas-content, .announcement-card, .gallery-item {
+.section-header, .about-content, .busas-content, .important-dates-content, .call-for-papers-content, .committees-content, .announcement-card, .gallery-item {
     opacity: 0;
     will-change: opacity, transform;
 }
@@ -635,4 +635,264 @@ footer {
 .navbar-logo {
     height: 40px;
     width: auto;
+}
+
+/* Important Dates Section Styles */
+.important-dates-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dates-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.dates-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dates-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dates-item:last-child {
+    margin-bottom: 0;
+}
+
+.date-icon {
+    color: var(--accent-color);
+    font-size: 24px;
+    margin-right: 20px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.date-details h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.date-details p {
+    color: var(--dark-color);
+    font-size: 18px;
+}
+
+/* Call for Papers Section Styles */
+.call-for-papers-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.call-papers-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.call-papers-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.call-papers-card h3 {
+    color: var(--primary-color);
+    margin: 25px 0 15px;
+    font-size: 22px;
+}
+
+.call-papers-card p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.download-link {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.download-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.download-link a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.topics-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.topics-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Committees Section Styles */
+.committees-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.committee-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.committee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.committee-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.committee-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.committee-item h3 {
+    color: var(--primary-color);
+    margin-right: 15px;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.committee-item p {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.committee-members {
+    list-style-type: none;
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.committee-members li {
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.committee-members li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.heading-with-tooltip {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.heading-with-tooltip h3 {
+    margin-bottom: 0;
+}
+
+.info-tooltip {
+    position: relative;
+    display: inline-block;
+    color: var(--secondary-color);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.info-tooltip i {
+    font-size: 18px;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 300px;
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 125%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var(--dark-color) transparent transparent;
+}
+
+.info-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* For mobile screens, adjust tooltip position */
+@media screen and (max-width: 768px) {
+    .tooltip-text {
+        width: 200px;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .tooltip-text::after {
+        top: -10px;
+        left: 50%;
+        margin-left: -5px;
+        border-color: transparent transparent var(--dark-color) transparent;
+        right: auto;
+    }
 }
