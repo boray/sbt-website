@@ -165,6 +165,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize animations
     setupAnimations();
+    
+    // Mobile tooltip handling
+    setupMobileTooltips();
 });
 
 // Countdown to event
@@ -211,4 +214,43 @@ function updateSpecificCountdown(selector, targetDate, expiredMessage) {
             <span class="countdown-label">Saniye</span>
         </div>
     `;
+}
+
+// Handle mobile tooltips better
+function setupMobileTooltips() {
+    const isMobile = window.innerWidth <= 768;
+    const tooltipIcons = document.querySelectorAll('.info-tooltip i');
+    
+    if (isMobile) {
+        tooltipIcons.forEach(icon => {
+            // Change to click event on mobile
+            icon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Hide all other tooltips first
+                document.querySelectorAll('.tooltip-text').forEach(tip => {
+                    tip.style.visibility = 'hidden';
+                    tip.style.opacity = '0';
+                });
+                
+                // Show this tooltip
+                const tooltip = this.parentNode.querySelector('.tooltip-text');
+                if (tooltip.style.visibility === 'visible') {
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                } else {
+                    tooltip.style.visibility = 'visible';
+                    tooltip.style.opacity = '1';
+                }
+            });
+        });
+        
+        // Close tooltips when clicking anywhere else
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.tooltip-text').forEach(tooltip => {
+                tooltip.style.visibility = 'hidden';
+                tooltip.style.opacity = '0';
+            });
+        });
+    }
 }
