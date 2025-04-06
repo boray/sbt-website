@@ -882,49 +882,18 @@ footer {
 /* For mobile screens, adjust tooltip position */
 @media screen and (max-width: 768px) {
     .tooltip-text {
-        width: 90%;
-        max-width: 90%;
-        top: auto;
-        bottom: 20px;
-        left: 5%;
-        right: 5%;
-        transform: none;
-        position: fixed;
-        z-index: 100;
-        text-align: left;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        font-size: 14px;
-        line-height: 1.4;
-        padding: 12px;
-        border-radius: 8px;
-        background-color: rgba(4, 28, 52, 0.95);
+        width: 200px;
+        top: 50%;
+        right: 130%;
+        left: auto;
+        transform: translateY(-50%);
     }
     
     .tooltip-text::after {
-        display: none;
-    }
-    
-    .committee-card {
-        padding: 20px;
-    }
-    
-    .committee-item {
-        padding-right: 10px;
-    }
-    
-    .info-tooltip {
-        position: static;
-    }
-    
-    .info-tooltip i {
-        font-size: 20px;
-        background-color: var(--secondary-color);
-        color: white;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        top: 50%;
+        left: auto;
+        right: -10px;
+        margin-top: -5px;
+        border-color: transparent transparent transparent var(--dark-color);
     }
 }
