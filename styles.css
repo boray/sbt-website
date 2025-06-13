@@ -907,3 +907,94 @@ footer {
     font-style: italic;
     text-align: right;
 }
+
+.transportation-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.transportation-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transportation-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.transportation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.transportation-card p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .transportation-card {
+        padding: 30px 20px;
+    }
+    
+    .transportation-card p {
+        font-size: 16px;
+    }
+}
+
+.transportation-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.transportation-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.transportation-icon {
+    color: var(--accent-color);
+    font-size: 24px;
+    margin-right: 20px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.transportation-details h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.transportation-details p {
+    color: var(--dark-color);
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .transportation-details h4 {
+        font-size: 18px;
+    }
+    
+    .transportation-details p {
+        font-size: 16px;
+    }
+}
