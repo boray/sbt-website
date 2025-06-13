@@ -897,3 +897,13 @@ footer {
         border-color: transparent transparent transparent var(--dark-color);
     }
 }
+
+.announcement-date {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: right;
+}
