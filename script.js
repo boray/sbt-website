@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Countdown to event
 const eventDate = new Date('2025-11-22T09:00:00');
-const abstractDeadline = new Date('2025-07-31T23:59:59');
+const abstractDeadline = new Date('2025-09-05T23:59:59');
 
 function updateCountdown() {
     updateSpecificCountdown('.countdown', eventDate, 'Etkinlik başladı!');
