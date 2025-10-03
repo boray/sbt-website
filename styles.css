@@ -28,6 +28,16 @@ body {
     padding: 0 0; /* remove side padding so image spans edge-to-edge */
 }
 
+/* Light darkening overlay over the image for readability */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero:before {
     content: '';
     position: absolute;
@@ -44,6 +54,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    filter: blur(1px) brightness(0.9);
 }
 
 .navbar {
@@ -141,7 +152,7 @@ body {
 
 /* Hero center white card */
 .hero-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(2px);
     border-radius: 16px;
     padding: 28px 28px 22px;
@@ -151,7 +162,8 @@ body {
     z-index: 2;
     color: var(--dark-color);
     position: absolute;
-    top: 50%;
+    /* Center in upper half of the screen */
+    top: 35vh;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -673,6 +685,7 @@ footer {
         padding: 22px 18px 18px;
         margin: 0 10px;
         width: calc(100% - 20px);
+        top: 40vh;
     }
 }
 
