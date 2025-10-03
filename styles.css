@@ -21,19 +21,11 @@ body {
 
 .hero {
     position: relative;
-    height: 100vh;
-    /* Ensure the entire vertical image is visible */
-    background-image: linear-gradient(rgba(5, 25, 55, 0.6), rgba(5, 25, 55, 0.6)), url('main-page.jpeg');
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    background-size: cover, contain;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+    display: block;
     text-align: center;
     color: white;
-    padding: 0 20px;
+    padding: 0 0; /* remove side padding so image spans edge-to-edge */
 }
 
 .hero:before {
@@ -45,6 +37,13 @@ body {
     height: 100px;
     background: linear-gradient(to top, var(--light-color), transparent);
     z-index: 1;
+}
+
+/* Hero full-width responsive image */
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .navbar {
@@ -148,9 +147,13 @@ body {
     padding: 28px 28px 22px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     max-width: 760px;
-    width: 100%;
+    width: calc(100% - 40px);
     z-index: 2;
     color: var(--dark-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .hero-card .hero-content h1 {
@@ -669,6 +672,7 @@ footer {
     .hero-card {
         padding: 22px 18px 18px;
         margin: 0 10px;
+        width: calc(100% - 20px);
     }
 }
 
