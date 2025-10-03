@@ -22,7 +22,11 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(5, 25, 55, 0.6), rgba(5, 25, 55, 0.6)), url('main-page.jpeg') center/cover no-repeat;
+    /* Ensure the entire vertical image is visible */
+    background-image: linear-gradient(rgba(5, 25, 55, 0.6), rgba(5, 25, 55, 0.6)), url('main-page.jpeg');
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
