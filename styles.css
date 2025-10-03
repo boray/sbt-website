@@ -21,21 +21,15 @@ body {
 
 .hero {
     position: relative;
-    height: auto;
-    display: block;
+    height: 100vh;
+    background: linear-gradient(rgba(5, 25, 55, 0.7), rgba(5, 25, 55, 0.7)), url('Albert-Long-Hall.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
-    padding: 0 0; /* remove side padding so image spans edge-to-edge */
-}
-
-/* Light darkening overlay over the image for readability */
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.18);
-    z-index: 1;
-    pointer-events: none;
+    padding: 0 20px;
 }
 
 .hero:before {
@@ -47,14 +41,6 @@ body {
     height: 100px;
     background: linear-gradient(to top, var(--light-color), transparent);
     z-index: 1;
-}
-
-/* Hero full-width responsive image */
-.hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: blur(1px) brightness(0.9);
 }
 
 .navbar {
@@ -150,50 +136,6 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Hero center white card */
-.hero-card {
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: blur(2px);
-    border-radius: 16px;
-    padding: 28px 28px 22px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    max-width: 760px;
-    width: calc(100% - 40px);
-    z-index: 2;
-    color: var(--dark-color);
-    position: absolute;
-    /* Center in upper half of the screen */
-    top: 25vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Secondary card for logo in lower half */
-.hero-card--logo {
-    position: absolute;
-    top: 75vh; /* center point of lower half */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(2px);
-    padding: 16px 20px;
-    border-radius: 14px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-}
-
-.hero-card .hero-content h1 {
-    text-shadow: none;
-}
-
-.hero-card .hero-content h2 {
-    text-shadow: none;
-}
-
-.hero-card .cta-button {
-    margin-top: 8px;
-}
-
 /* Countdown Styles */
 .countdown-container {
     margin-top: 40px;
@@ -203,19 +145,6 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 450px;
-}
-
-/* Light countdown box when inside white hero card */
-.hero-card .countdown-container {
-    background-color: rgba(255, 255, 255, 0.85);
-}
-
-.hero-card .countdown-label {
-    color: var(--dark-color);
-}
-
-.hero-card .countdown-number {
-    background-color: rgba(0, 0, 0, 0.06);
 }
 
 .countdown-container h3 {
@@ -693,18 +622,6 @@ footer {
     
     .countdown-label {
         font-size: 12px;
-    }
-
-    .hero-card {
-        padding: 22px 18px 18px;
-        margin: 0 10px;
-        width: calc(100% - 20px);
-        top: 35vh;
-    }
-
-    .hero-card--logo {
-        top: 80vh;
-        padding: 12px 16px;
     }
 }
 
