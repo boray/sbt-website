@@ -22,7 +22,7 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(5, 25, 55, 0.7), rgba(5, 25, 55, 0.7)), url('Albert-Long-Hall.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(5, 25, 55, 0.6), rgba(5, 25, 55, 0.6)), url('main-page.jpeg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,6 +136,31 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* Hero center white card */
+.hero-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(2px);
+    border-radius: 16px;
+    padding: 28px 28px 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    max-width: 760px;
+    width: 100%;
+    z-index: 2;
+    color: var(--dark-color);
+}
+
+.hero-card .hero-content h1 {
+    text-shadow: none;
+}
+
+.hero-card .hero-content h2 {
+    text-shadow: none;
+}
+
+.hero-card .cta-button {
+    margin-top: 8px;
+}
+
 /* Countdown Styles */
 .countdown-container {
     margin-top: 40px;
@@ -145,6 +170,19 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 450px;
+}
+
+/* Light countdown box when inside white hero card */
+.hero-card .countdown-container {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-card .countdown-label {
+    color: var(--dark-color);
+}
+
+.hero-card .countdown-number {
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
 .countdown-container h3 {
@@ -622,6 +660,11 @@ footer {
     
     .countdown-label {
         font-size: 12px;
+    }
+
+    .hero-card {
+        padding: 22px 18px 18px;
+        margin: 0 10px;
     }
 }
 
