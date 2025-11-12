@@ -136,6 +136,14 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* Small note under CTA for registration deadline */
+.registration-deadline-note {
+    margin-top: 8px;
+    color: #f1f1f1;
+    font-size: 13px;
+    opacity: 0.95;
+}
+
 /* Countdown Styles */
 .countdown-container {
     margin-top: 40px;
@@ -196,7 +204,7 @@ body {
     text-transform: uppercase;
 }
 
-.about-section, .busas-section, .announcements-section, .gallery-section, .contact-section, .biomedical-section, .important-dates-section, .call-for-papers-section, .committees-section {
+.about-section, .busas-section, .announcements-section, .gallery-section, .contact-section, .biomedical-section, .supporters-section, .important-dates-section, .call-for-papers-section, .committees-section {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -528,6 +536,84 @@ footer {
     transform: scale(1.1);
 }
 
+/* Supporters Section Styles */
+.supporters-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supporters-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 30px 30px 20px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.supporters-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.supporters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.supporter-item {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 18px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.supporter-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.supporter-logo {
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(10%);
+    transition: filter 0.25s ease;
+}
+
+.supporter-item:hover .supporter-logo {
+    filter: grayscale(0%);
+}
+
+@media screen and (max-width: 768px) {
+    .supporters-card {
+        padding: 24px 20px 16px;
+    }
+    .supporters-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 16px;
+    }
+    .supporter-item {
+        height: 100px;
+        padding: 14px;
+    }
+    .supporter-logo {
+        max-height: 64px;
+    }
+}
+
 .copyright {
     margin-top: 40px;
     padding-top: 20px;
@@ -547,7 +633,7 @@ footer {
     }
 }
 
-.section-header, .about-content, .busas-content, .important-dates-content, .call-for-papers-content, .committees-content, .announcement-card, .gallery-item {
+.section-header, .about-content, .busas-content, .supporters-content, .important-dates-content, .program-content, .call-for-papers-content, .committees-content, .announcement-card, .gallery-item {
     opacity: 0;
     will-change: opacity, transform;
 }
@@ -1008,5 +1094,130 @@ footer {
     
     .transportation-details p {
         font-size: 16px;
+    }
+}
+
+/* Program Section Styles */
+.program-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.program-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    .program-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.program-day {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.program-day:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.program-day-header {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 18px 24px;
+}
+
+.program-day-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.program-list {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.program-item, .program-break, .program-session {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 14px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.program-item:last-child,
+.program-break:last-child,
+.program-session:last-child {
+    border-bottom: none;
+}
+
+.program-item .time,
+.program-break .time,
+.program-session .time {
+    color: var(--accent-color);
+    font-weight: 700;
+    text-align: right;
+}
+
+.program-item .details .title,
+.program-break .details .title {
+    color: var(--dark-color);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.program-item .details .speaker {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.program-item .details .subtitle {
+    color: #555;
+    font-style: italic;
+}
+
+/* Make session talk titles (with a speaker) italic and darker gray, similar to special talk style */
+.program-item .details .speaker + .title {
+    font-style: italic;
+    color: #555;
+    font-size: 16px;
+}
+
+.program-session .session-title {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.program-session .session-chair {
+    color: #555;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.program-item.highlight {
+    background-color: #f8fdff;
+}
+
+.program-item.closing .details .title {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .program-item, .program-break, .program-session {
+        grid-template-columns: 110px 1fr;
+        padding: 12px 14px;
+    }
+    .program-day-header h3 {
+        font-size: 20px;
     }
 }
